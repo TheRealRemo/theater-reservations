@@ -5,9 +5,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-
-import static javax.print.attribute.Size2DSyntax.MM;
-
 public class TheaterReservations {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
@@ -23,7 +20,9 @@ public class TheaterReservations {
         String lastName = name.substring(spaceIndex + 1);
 
         System.out.println(lastName + ", " + firstName);
-
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        LocalDate date = LocalDate.parse(dateOfBirth, formatter);
+        System.out.println(date);
 
     }
 }
